@@ -1,3 +1,8 @@
 spring:
+  kafka:
+    bootstrap-servers: localhost:9092
   application:
     name: race-data-service
+
+openf1:
+  base-url: https://api.openf1.org/v1
