@@ -13,17 +13,4 @@ public class RaceDataServiceApplication {
         SpringApplication.run(RaceDataServiceApplication.class, args);
     }
 
-    @Bean
-    CommandLineRunner testOpenF1(OpenF1Client  openF1Client) {
-        return args -> {
-            var laps = openF1Client.getLaps(9161);
-
-            System.out.println("Received laps: " + laps.size());
-
-            laps.stream()
-                    .limit(5)
-                    .forEach(System.out::println);
-        };
-    }
-
 }

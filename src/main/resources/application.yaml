@@ -1,10 +1,11 @@
 spring:
   application:
     name: race-data-service
-  kafka:
-    bootstrap-servers: localhost:9092
+
   config:
-    import: classpath:kafka-topics.yml
+    import:
+      - classpath:kafka-topics.yml
+      - classpath:kafka-settings.yaml
 
 openf1:
   base-url: https://api.openf1.org/v1
