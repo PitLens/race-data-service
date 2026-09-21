@@ -16,6 +16,19 @@ java {
 
 repositories {
     mavenCentral()
+
+    maven {
+        url = uri('https://maven.pkg.github.com/PitLens/pitlens-contracts')
+
+        credentials {
+            username = project.findProperty('gpr.user')
+                    ?: System.getenv('GITHUB_ACTOR')
+
+            password = project.findProperty('gpr.key')
+                    ?: System.getenv('GITHUB_TOKEN')
+        }
+    }
+
 }
 
 dependencies {
@@ -33,6 +46,9 @@ dependencies {
     testCompileOnly 'org.projectlombok:lombok'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testAnnotationProcessor 'org.projectlombok:lombok'
+
+//  ----------------------- Custom dependencies -------------------------------------
+    implementation 'io.pitlens:pitlens-contracts:0.1.2'
 }
 
 tasks.named('test') {

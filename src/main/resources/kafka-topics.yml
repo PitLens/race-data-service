@@ -1,0 +1,4 @@
+pitlens:
+  kafka:
+    topics:
+      race-laps: pitlens.race.laps
